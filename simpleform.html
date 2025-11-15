@@ -3,47 +3,11 @@
     <head>
         <meta charset="utf-8">
         <title>Simple Form</title>
-        <style>
-            h2, p {
-                font-weight: bold;
-            }
-            button {
-                margin-top: 20px;
-            }
-        </style>
     </head>
     <body>
-        <form action="simpleform.html" method="get">
-            <h2>Order Form</h2>
-            <!-- Choose product -->
-            <p>What would you like to buy</p>
-            <select name="product">
-                <option name="A">A</option>
-                <option name="B" value="B (+0.5$)">B (+0.5$)</option>
-                <option name="C" value="C (+0.5$)">C (+0.5$)</option>
-            </select>
-
-            <!-- Choose price -->
-            <p>How many would you like to order?</p>
-            <input type="radio" name="price" value="1-$10" checked>1-$10 <br>
-            <input type="radio" name="price" value="2-$20">2-$20 <br>
-            <input type="radio" name="price" value="3-$25">3-$25 <br>
-
-            <!-- Customer information -->
-            <p>Name <span style="color:red;">*</span></p>
-            <input type="text" name="fname" placeholder="FirstName" required>
-            <input type="text" name="lname" placeholder="LastName" required>
-
-            <p>Email</p>
-            <input type="email" name="email">
-
-            <p>Phone Number</p>
-            <input type="text" name="phone1" size="5"> -
-            <input type="text" name="phone2" size="5"> -
-            <input type="text" name="phone3" size="5">
-            <div>
-                <button type="submit" name="btSubmit" value="submit">Submit</button>
-            </div>
+        <form action="https://www.bing.com.vn/search" method="GET">
+            <input type="text" name="q">
+            <input type="submit" value="Tìm kiếm">
         </form>
     </body>
 </html>
