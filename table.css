@@ -1,0 +1,54 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+.table1 {
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    color: blue;
+    padding: 0 28px;
+}
+
+.table1 td:nth-child(1) {
+    text-align: left;
+}
+.table1 td:nth-child(2) {
+    text-align: right;
+}
+
+.table2 {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+.table2 th,
+.table2 td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 12px;
+}
+
+.yellow-th {
+    background-color: yellow;
+}
+
+.orange-tr {
+    background-color: orange;
+}
+
+.grey-tr {
+    background-color: #e5e2e2;
+}
+
+.short {
+    width: 120px;
+}
