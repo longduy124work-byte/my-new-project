@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <style>
+        table {
+            border: 1px solid black;
+        }
+        td {
+            border: 1px solid black;
+            width: 70px;
+            height: 70px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+        }
+
+        #screen {
+            font-size: 24px;
+            text-align: right;
+            padding-right: 12px;
+            font-weight: bold;
+            height: 32px;
+            border: none;
+        }
+
+        #memory {
+            height: 20px;
+            border: none;
+            text-align: right;
+            padding: 4px 12px 0 12px;
+            font-size: 18px;
+            color: darkgray;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td id="memory" colspan="4"></td>
+    </tr>
+    <tr>
+        <td id="screen" colspan="4"></td>
+    </tr>
+    <tr>
+        <td><button onclick="onScreen('(')">(</button></td>
+        <td><button onclick="onScreen(')')">)</button></td>
+        <td><button onclick="percent()">%</button></td>
+        <td><button onclick="clearScreen()">AC</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="onScreen('7')">7</button></td>
+        <td><button onclick="onScreen('8')">8</button></td>
+        <td><button onclick="onScreen('9')">9</button></td>
+        <td><button onclick="onScreen('/')">/</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="onScreen('4')">4</button></td>
+        <td><button onclick="onScreen('5')">5</button></td>
+        <td><button onclick="onScreen('6')">6</button></td>
+        <td><button onclick="onScreen('*')">x</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="onScreen('1')">1</button></td>
+        <td><button onclick="onScreen('2')">2</button></td>
+        <td><button onclick="onScreen('3')">3</button></td>
+        <td><button onclick="onScreen('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button onclick="onScreen('0')">0</button></td>
+        <td><button onclick="onScreen('.')">.</button></td>
+        <td><button id="btn">=</button></td>
+        <td><button onclick="onScreen('+')">+</button></td>
+    </tr>
+</table>
+
+<script>
+    let screen = document.getElementById("screen");
+    let result = 0;
+    let memory = document.getElementById("memory");
+    function onScreen(number) {
+        if (screen.innerHTML === "0") {
+            screen.innerHTML = number;
+        }else {
+            screen.innerHTML += number;
+            // screen.innerHTML = screen.innerHTML + number
+        }
+    }
+
+    function clearScreen() {
+        screen.innerHTML = 0;
+    }
+
+        // result = eval(screen.innerHTML);
+        // screen.innerHTML = result;
+        btn = document.getElementById("btn");
+        btn.addEventListener("click", calculate)
+        function calculate() {
+            // lấy biểu thức từ ô screen
+            const expression = screen.innerHTML;
+            // tính toán kết quả biểu thức
+            result = eval(expression);
+            // in kết quả ra screen
+            screen.innerHTML = result;
+            // in biểu thức ra memory
+            memory.innerHTML = expression;
+        }
+
+    function percent() {
+        result = eval(screen.innerHTML)/100;
+        screen.innerHTML = result;
+        memory.innerHTML = screen.innerHTML;
+    }
+</script>
+</body>
+</html>
