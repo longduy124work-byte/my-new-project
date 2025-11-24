@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Do You Love Me</title>
+</head>
+<body>
+    <h1>Do you love me?</h1>
+    <button onclick="alert('<3')">Yes</button>
+    <button id="no" onmouseover="moveBtn()" style="position:relative; left:0; top:0;">No</button>
+<script>
+    let noBtn = document.getElementById('no');
+    let windowHeight = window.innerHeight;
+    let windowWidth = window.innerWidth;
+    number = Math.random()
+    function moveBtn() {
+        noBtn.style.left = parseInt(noBtn.style.left) + (Math.random()*100) + 'px';
+        noBtn.style.top = parseInt(noBtn.style.top) + (Math.random()*100) + 'px';
+    }
+    let newLeft =  noBtn.style.left;
+    let newHeight = noBtn.style.top;
+    if(newLeft >= windowWidth && newHeight >= windowHeight) {
+        alert ('You love Me!');
+    }
+</script>
+</body>
+</html>
