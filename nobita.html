@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moving Nobita</title>
+</head>
+<body>
+    <img id="nobita" alt="nobita picture" src="https://upload.wikimedia.org/wikipedia/vi/2/2c/Nobita.png" style="position:absolute;left:0; top:0;">
+<script>
+    let element = document.getElementById("nobita");
+    // Tạo hàm di chuyển cho từng hướng
+    function moveDown() {
+        element.style.top = parseInt(element.style.top) + 10 + "px"
+    }
+    function moveUp() {
+        element.style.top = parseInt(element.style.top) - 10 + "px"
+    }
+    function moveRight() {
+        element.style.left = parseInt(element.style.left) + 10 + "px"
+    }
+    function moveLeft() {
+        element.style.left = parseInt(element.style.left) - 10 + "px"
+    }
+
+    // Tạo hàm gán các hàm di chuyển bên trên vào từng phím cụ thể
+    function moveKeyboard(evt) { //evt là đối tượng sự kiện khi người dùng nhấn nút, 37, 38, 39, 40 là giá trị của đối tượng này
+        switch(evt.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }
+    function ready() {
+        window.addEventListener("keydown", moveKeyboard);
+    }
+
+    ready()
+
+</script>
+</body>
+</html>
