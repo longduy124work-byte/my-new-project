@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ball Moving Program</title>
+</head>
+<body>
+    <img id="ball" alt="ball image" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Football_%28soccer_ball%29.svg" style="width:20%"> <br>
+    <button id="leftBtn" onclick="moveLeft()">Move Left</button>
+    <button id="rightBtn" onclick="moveRight()">Move Right</button>
+<script>
+    let objBall = document.getElementById("ball");
+    function init() {
+        objBall.style.position = "relative";
+        objBall.style.left = "0";
+    }
+    function moveRight() {
+        let currentLeft = parseInt(objBall.style.left); //.style.left chỉ lấy được giá trị trong inline style
+        objBall.style.left = currentLeft + 20 + "px"
+    }
+    function moveLeft() {
+        let currentLeft = parseInt(objBall.style.left); //.style.left chỉ lấy được giá trị trong inline style
+        objBall.style.left = currentLeft - 20 + "px"
+    }
+    window.onload(init);
+</script>
+</body>
+</html>
