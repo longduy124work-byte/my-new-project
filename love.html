@@ -17,14 +17,10 @@
     let windowWidth = window.innerWidth;
     number = Math.random()
     function moveBtn() {
-        noBtn.style.left = parseInt(noBtn.style.left) + (Math.random()*100) + 'px';
-        noBtn.style.top = parseInt(noBtn.style.top) + (Math.random()*100) + 'px';
+        noBtn.style.left = parseInt(Math.random()*(windowHeight-50)) + 'px';
+        noBtn.style.top = parseInt(Math.random()*(windowWidth-50)) + 'px';
     }
-    let newLeft =  noBtn.style.left;
-    let newHeight = noBtn.style.top;
-    if(newLeft >= windowWidth && newHeight >= windowHeight) {
-        alert ('You love Me!');
-    }
+
 </script>
 </body>
 </html>
