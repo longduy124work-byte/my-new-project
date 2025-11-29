@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Số nguyên tố</title>
+</head>
+<body>
+    <script>
+        // Check đủ 20 số nguyên tố thì dừng -> vòng lặp
+        let count=0;
+        let number=2;
+        while (count<20) {
+            let i = 2;
+            let isPrime = true;
+            while(i<number) {
+                if(number % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+                i++
+            }
+            if (isPrime) {
+                console.log(number);
+                count++
+            }
+
+            number++;
+        }
+
+    </script>
+</body>
+</html>
