@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bảng Cửu Chương</title>
+    <style>
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+        tr, td {
+            border: solid 1px;
+            height: 50px;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Tạo bảng với 9 dòng 8 cột bằng vòng lặp
+        document.write("<table>")
+            for(let i=1;i<=9;i++){
+                document.write("<tr>")
+                    for(let j=2;j<=9;j++){
+                        document.write("<td>")
+                            document.write(`${j}x${i} = ${j*i}`)
+                        document.write("</td>")
+                    }
+                document.write("</tr>")
+            }
+        document.write("</table>")
+    </script>
+</body>
+</html>
