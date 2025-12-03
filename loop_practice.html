@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luyện tập vòng lặp</title>
+</head>
+<body>
+<button id="play" onclick="guessNumber()" >Chơi ngay</button>
+    <script>
+    // Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+    //     for(let i = 1; i<= 100; i++){
+    //         if(i===99) {
+    //             alert("Hoàn thành")
+    //             console.log(i)
+    //         }
+    //     }
+
+    // Bài 2: Hiển thị 20 số đầu tiên trong dãy fibonacci
+    // Bài 3: Hiển thị số đầu tiên trong dãy fib chia hết cho 5
+    // Bài 4: Tính tổng dãy fib có 20 số
+    // let number = +prompt("Nhập số lượng số cần hiển thị")
+    // let a = 0;
+    // let b = 1;
+    // let c;
+    // let count=2;// biến đếm
+    // let result = a + "," + b
+    // let sum = a+b
+    //
+    // while(count<number) {
+    //     c = a+b;
+    //     // if (c % 5 ===0) {
+    //     //     console.log(result)
+    //     //     console.log("Số đầu tiên chia hết cho 5 là " + c)
+    //     //     break;
+    //     // }
+    //     a = b;
+    //     b = c;
+    //     result += "," + c
+    //     count++;
+    //     sum += c;
+    // }
+    // console.log(result);
+    // console.log(sum);
+
+    // Bài 5: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên
+    // tìm được 30 số
+    // let count = 0;
+    // let number = 0;
+    // let result="";
+    // let sum = 0;
+    // while(count<30) {
+    //     if(number % 7 === 0) {
+    //         count++
+    //         result += ","+ number;
+    //         sum += number;
+    //     }
+    //     number++
+    // }
+    // console.log(result)
+    // console.log("Tổng: "+ sum)
+
+    // Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+    // for (let i = 1; i <= 100; i++){
+    //      if(i % 5 === 0 && i % 3 === 0) {
+    //          console.log("fizzbuzz")
+    //      } else if(i % 5 === 0) {
+    //          console.log("buzz")
+    //      } else if(i % 3 === 0) {
+    //          console.log("fizz")
+    //      } else {
+    //          console.log(i)
+    //      }
+    // }
+
+    // Bài 8: Game đoán số
+    function guessNumber() {
+        let range = +prompt("Nhập khoảng muốn đoán")
+        let guessNum;
+        let trueNum = parseInt(Math.random()*range +1)
+        let count = 0;
+        let countLimit = 3;
+        do {
+            guessNum = +prompt("Nhập số muốn đoán");
+            count++;
+            if(guessNum === trueNum) {
+                alert("Bạn đoán đúng rồi")
+                break;
+            } else {
+                if(count === countLimit) {
+                    alert("Bạn đã hết lượt đoán")
+                    break;
+                } else {
+                    if(guessNum > trueNum) {
+                        alert(`Số cần đoán nhỏ hơn, bạn còn ${countLimit-count} lần đoán`)
+                    } else {
+                        alert(`Số cần đoán lớn hơn, bạn còn ${countLimit-count} lần đoán`)
+                    }
+                }
+            }
+
+        } while(guessNum !== trueNum)
+
+        console.log(trueNum)
+    }
+    </script>
+</body>
+</html>
