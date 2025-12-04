@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add element in array</title>
+</head>
+<body>
+<input id="input" type="text" placeholder="Enter number">
+<button type="button" onclick="addItem()">Add</button>
+<button type="button" onclick="displayArr()">Display</button>
+<div id="result"></div>
+<script>
+    // Hàm add phần tử vào mảng
+    let arr = []; // biến đặt vào hàm là sẽ bị gọi biến mới mỗi lần click button
+    let index = 0;
+
+    function addItem() {
+        let input = document.getElementById("input"); // gọi đến element input
+        let item = +input.value // khai biến value của input
+        arr.push(item);
+        alert(`Added ${item} in the array, index = ${index}`);
+        index++
+        console.log(arr)
+        input.value = ""; // xoá text trên input
+        input.focus(); // tự động đưa chuột lại vào ô input
+    }
+
+    // Hàm display mảng
+    function displayArr() {
+        let line = "<hr>";
+        for(let i = 0; i < arr.length; i++) {
+            line += `Item ${i} is: ${arr[i]} <br>`
+            document.getElementById("result").innerHTML = line;
+        }
+    }
+</script>
+</body>
+</html>
