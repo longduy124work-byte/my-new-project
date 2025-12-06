@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reverse Array</title>
+</head>
+<body>
+<script>
+    // Khai báo mảng full
+    // Khai báo 2 biến trái và phải
+    // Sử dụng vòng lặp, while trái < phải thì sẽ đổi giá trị của trái qua phải
+    // Trái tăng dần, phải giảm dần
+
+    let array = [-3,5,1,3,2,10];
+    let left = 0 // khai báo index của mảng
+    let right = array.length - 1
+    while(left < right) {
+        let temp = array[left]; // reset giá trị trái
+        array[left] = array[right]; // giá trị trái bằng giá trị phải
+        array[right] = temp; // giá trị phải bằng giá trị trái
+        left++
+        right--
+    } console.log(array);
+
+</script>
+</body>
+</html>
