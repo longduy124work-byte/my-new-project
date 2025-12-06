@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Array Item</title>
+</head>
+<body>
+<script>
+    // Nhập phần tử qua hộp thoại, nếu có/không alert ra thông điệp tương ứng
+    let array = [-1,8,9,7,4,3,50,32];
+    while(true) { // dùng while(true) được nhưng phải có điều kiện để break vòng lặp
+       let item = +prompt("Enter number")
+       let found = false;
+       for(let i = 0; i < array.length; i++) { // cách để check từng giá trị nhận được từ number vào từng thành phần trong mảng
+           if(item === array[i]){
+               found = true;
+               break;
+           }
+       }
+        if(found) {
+            alert(`Item ${item} is already in the list`);
+            break;
+        } else {
+            alert(`Item ${item} is not in the list`);
+        }
+   }
+
+</script>
+</body>
+</html>
