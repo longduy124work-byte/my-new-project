@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Từ điển</title>
+</head>
+<body>
+<h2>Từ điển đơn giản</h2>
+<input id="input" type="text" placeholder="Nhập từ tiếng Anh">
+<button type="button" onclick="translateWord()">Tìm kiếm</button>
+<p id="result"></p>
+<script>
+    // nhập từ tiếng Anh vào input
+    // nếu từ tiếng Anh có trong mảng tiếng Anh
+    // index bằng index duyệt
+    // in ra kết quả là mảng tiếng Việt với index
+
+    let engWords = ["cat", "banana", "apple"];
+    let vietWords = ["mèo", "chuối", "táo"];
+
+    function translateWord() {
+        let value = document.getElementById("input").value;
+        let index = -1;
+        for(let i=0; i<engWords.length; i++){
+            if(value === engWords[i]) {
+                index = i;
+                break;
+            }
+        }
+        if(index !== -1) {
+            document.getElementById("result").innerHTML = "Nghĩa tiếng Việt là: " + vietWords[index]
+        } else {
+            document.getElementById("result").innerHTML = "Không tìm thấy"
+        }
+    }
+
+</script>
+</body>
+</html>
